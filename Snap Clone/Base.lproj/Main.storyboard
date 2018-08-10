@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -119,12 +121,111 @@
                                 <action selector="logoutTapped:" destination="I7P-Kt-5Vh" id="Z2g-b4-Y5g"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="x04-X6-pfX"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="x04-X6-pfX">
+                            <connections>
+                                <segue destination="etb-R3-v4r" kind="show" id="fuZ-2N-j25"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyo-mh-Lco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1553" y="34"/>
+        </scene>
+        <!--Add Image-->
+        <scene sceneID="Vwa-lR-nP6">
+            <objects>
+                <viewController id="etb-R3-v4r" customClass="AddImageViewController" customModule="Snap_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oju-zK-70r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-camera" translatesAutoresizingMaskIntoConstraints="NO" id="EU4-48-L1F">
+                                <rect key="frame" x="10" y="74" width="355" height="204"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EU4-48-L1F" secondAttribute="height" multiplier="355:204" id="9XG-ct-vfM"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z7N-2O-SP2">
+                                <rect key="frame" x="10" y="318" width="355" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-6i-hXe">
+                                <rect key="frame" x="168" y="392" width="40" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="etb-R3-v4r" eventType="touchUpInside" id="g2g-DE-DKU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z7N-2O-SP2" firstAttribute="top" secondItem="EU4-48-L1F" secondAttribute="bottom" constant="40" id="AZx-XK-m1e"/>
+                            <constraint firstItem="Z7N-2O-SP2" firstAttribute="leading" secondItem="51y-Nf-vvJ" secondAttribute="leading" constant="10" id="QOJ-r7-Tuu"/>
+                            <constraint firstItem="51y-Nf-vvJ" firstAttribute="trailing" secondItem="EU4-48-L1F" secondAttribute="trailing" constant="10" id="T2D-dB-jHl"/>
+                            <constraint firstItem="51y-Nf-vvJ" firstAttribute="trailing" secondItem="Z7N-2O-SP2" secondAttribute="trailing" constant="10" id="UKw-St-1v6"/>
+                            <constraint firstItem="EU4-48-L1F" firstAttribute="leading" secondItem="51y-Nf-vvJ" secondAttribute="leading" constant="10" id="VpL-0X-KMD"/>
+                            <constraint firstItem="Z7N-2O-SP2" firstAttribute="centerX" secondItem="oju-zK-70r" secondAttribute="centerX" id="ZZW-a6-jt5"/>
+                            <constraint firstItem="EU4-48-L1F" firstAttribute="top" secondItem="51y-Nf-vvJ" secondAttribute="top" constant="10" id="yjL-K6-mFH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="51y-Nf-vvJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Image" id="8aS-ij-g4J">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="JiP-Ro-lhc">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="etb-R3-v4r" id="bXS-fU-cjv"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="Qqm-9t-wiL">
+                                <connections>
+                                    <action selector="folderTapped:" destination="etb-R3-v4r" id="7DJ-JU-dMT"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="EU4-48-L1F" id="ULD-na-3UO"/>
+                        <outlet property="textField" destination="Z7N-2O-SP2" id="ChL-bq-2s2"/>
+                        <segue destination="fuR-xw-7nD" kind="show" identifier="addContact" id="eed-dx-Azv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3t5-Ic-gXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2295" y="34"/>
+        </scene>
+        <!--Add Contact Table View Controller-->
+        <scene sceneID="eZ3-z4-d8R">
+            <objects>
+                <tableViewController id="fuR-xw-7nD" customClass="AddContactTableViewController" customModule="Snap_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ami-ea-XG7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="UMs-7l-XQO">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UMs-7l-XQO" id="n70-3N-ohf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fuR-xw-7nD" id="fiJ-Jr-zU8"/>
+                            <outlet property="delegate" destination="fuR-xw-7nD" id="nkZ-r0-DPn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rhI-XM-tTR"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tCf-cY-rrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3028" y="34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iN6-DC-Hcg">
@@ -143,4 +244,7 @@
             <point key="canvasLocation" x="798" y="34"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo-camera" width="512" height="512"/>
+    </resources>
 </document>

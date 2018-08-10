@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class AuthViewController: UIViewController {
 
@@ -42,7 +43,10 @@ class AuthViewController: UIViewController {
                             print(error)
                         } else {
                             print("Sign up successful!")
-                            self.performSegue(withIdentifier: "authToSnaps", sender: nil)
+                            if let user = user {
+                                FIRDatabase.database().reference().child("users").child(user.uid).child("email").setValue(email)
+                                self.performSegue(withIdentifier: "authToSnaps", sender: nil)
+                            }
                         }
                     })
                 }

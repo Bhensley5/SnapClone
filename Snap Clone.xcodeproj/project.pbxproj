@@ -15,6 +15,8 @@
 		EA8BE76D211A27FE0077FA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8BE76C211A27FE0077FA51 /* Assets.xcassets */; };
 		EA8BE770211A27FE0077FA51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8BE76E211A27FE0077FA51 /* LaunchScreen.storyboard */; };
 		EA8BE778211A29040077FA51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA8BE777211A29040077FA51 /* GoogleService-Info.plist */; };
+		EAD6874A211D2EE0005EF59B /* AddContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD68749211D2EE0005EF59B /* AddContactTableViewController.swift */; };
+		EAD7F6DD211BBAB60041510F /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7F6DC211BBAB60041510F /* AddImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		EA8BE76F211A27FE0077FA51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA8BE771211A27FE0077FA51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA8BE777211A29040077FA51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EAD68749211D2EE0005EF59B /* AddContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactTableViewController.swift; sourceTree = "<group>"; };
+		EAD7F6DC211BBAB60041510F /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 			children = (
 				EA8BE765211A27FD0077FA51 /* AppDelegate.swift */,
 				EA8BE767211A27FD0077FA51 /* AuthViewController.swift */,
+				EAD7F6DC211BBAB60041510F /* AddImageViewController.swift */,
+				EAD68749211D2EE0005EF59B /* AddContactTableViewController.swift */,
 				EA8BE769211A27FD0077FA51 /* Main.storyboard */,
 				EA5FDE84211A92AA00BEC3CC /* SnapsTableViewController.swift */,
 				EA8BE76C211A27FE0077FA51 /* Assets.xcassets */,
@@ -211,7 +217,9 @@
 			files = (
 				EA5FDE85211A92AA00BEC3CC /* SnapsTableViewController.swift in Sources */,
 				EA8BE768211A27FD0077FA51 /* AuthViewController.swift in Sources */,
+				EAD7F6DD211BBAB60041510F /* AddImageViewController.swift in Sources */,
 				EA8BE766211A27FD0077FA51 /* AppDelegate.swift in Sources */,
+				EAD6874A211D2EE0005EF59B /* AddContactTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
