@@ -48,8 +48,16 @@ class AddContactTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let user = users[indexPath.row]
-        FIRAuth.auth()?.currentUser?.email
+        if let fromEmail = FIRAuth.auth()?.currentUser?.email {
+            
+            let snapDic = ["from":fromEmail, "imageName": imageName, "imageURL": imageURL, "message": message]
+        FIRDatabase.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snapDic)
+            navigationController?.popToRootViewController(animated: true)
+            
+        }
+        
     }
 
     /*

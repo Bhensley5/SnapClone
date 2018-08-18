@@ -71,6 +71,7 @@ class AddImageViewController: UIViewController, UIImagePickerControllerDelegate,
             addContact.imageURL = imageURL
             addContact.imageName = imageName
             if let message = textField.text {
+                addContact.message = message
             }
         }
     }
